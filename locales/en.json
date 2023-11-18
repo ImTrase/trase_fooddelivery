@@ -1,3 +1,18 @@
 {
-    
+    "no_job_title": "Invalid job",
+    "no_job_desc": "You do not have the required job to do this.",
+
+    "looking_client_progressBar": "Looking for a client...",
+
+    "dropoff_label": "Dropoff Food",
+    "handoff_label": "Handoff Food",
+
+    "dropoff_notify_title": "Delivered Food",
+    "dropoff_notify_desc": "You have gotten a client, go deliver there food!",
+
+    "reward_title": "Food Delivered!",
+    "reward_desc": "You have been rewarded with ${reward} for delivering the food!",
+
+    "handoff_help": "Press ~INPUT_CONTEXT~ to handoff food!",
+    "dropoff_help": "Press ~INPUT_CONTEXT~ to dropoff food!"
 }

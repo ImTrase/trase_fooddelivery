@@ -90,6 +90,12 @@ if Config.Framework == 'esx' then
     FRAMEWORK.addItemUseCallback = function(item, callback)
         ESX.RegisterUsableItem(item, callback)
     end
+
+    FRAMEWORK.getJob = function(target)
+        local xPlayer = FRAMEWORK.getPlayer(target)
+        if not xPlayer then return end
+        return xPlayer.job.name
+    end
 elseif Config.Framework == 'qbcore' then
     QBCore = loadQBCore()
 
