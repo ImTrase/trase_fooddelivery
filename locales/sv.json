@@ -1,0 +1,20 @@
+{
+    "no_job_title": "Ogiltigt jobb",
+    "no_job_desc": "Du har inte det nödvändiga jobbet för att göra detta.",
+
+    "looking_client_progressBar": "Letar efter en kund...",
+
+    "dropoff_label": "Lämna Mat",
+    "handoff_label": "Överlämna Mat",
+
+    "dropoff_notify_title": "Mat Levererad",
+    "dropoff_notify_desc": "Du har fått en kund, gå och leverera deras mat!",
+
+    "reward_title": "Mat Levererad!",
+    "reward_desc": "Du har belönats med ${reward} för att ha levererat maten!",
+
+    "handoff_help": "Tryck på ~INPUT_CONTEXT~ för att överlämna mat!",
+    "dropoff_help": "Tryck på ~INPUT_CONTEXT~ för att lämna mat!",
+
+    "devliver_blip_name": "Matleverans"
+}

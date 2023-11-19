@@ -1,0 +1,20 @@
+{
+    "no_job_title": "Trabajo inválido",
+    "no_job_desc": "No tienes el trabajo requerido para hacer esto.",
+
+    "looking_client_progressBar": "Buscando un cliente...",
+
+    "dropoff_label": "Entregar Comida",
+    "handoff_label": "Pasar Comida",
+
+    "dropoff_notify_title": "Comida Entregada",
+    "dropoff_notify_desc": "¡Has conseguido un cliente, ve a entregar su comida!",
+
+    "reward_title": "¡Comida Entregada!",
+    "reward_desc": "¡Has sido recompensado con ${reward} por entregar la comida!",
+
+    "handoff_help": "¡Presiona ~INPUT_CONTEXT~ para pasar la comida!",
+    "dropoff_help": "¡Presiona ~INPUT_CONTEXT~ para entregar la comida!",
+
+    "devliver_blip_name": "Entrega de Comida"
+}
