@@ -14,5 +14,7 @@
     "reward_desc": "You have been rewarded with ${reward} for delivering the food!",
 
     "handoff_help": "Press ~INPUT_CONTEXT~ to handoff food!",
-    "dropoff_help": "Press ~INPUT_CONTEXT~ to dropoff food!"
+    "dropoff_help": "Press ~INPUT_CONTEXT~ to dropoff food!",
+
+    "devliver_blip_name": "Food Delivery"
 }

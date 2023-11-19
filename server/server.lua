@@ -1,5 +1,6 @@
 local FRAMEWORK = require('modules.framework.server')
 local legit = {}
+local oldMissions = {}
 
 local random <const> = math.random
 
@@ -23,6 +24,11 @@ if Config.Command.Enabled then
         legit[src] = true
 
         local missionId = random(#Config.Missions)
+        if oldMissions[src] ~= nil and oldMissions[src] == missionId then
+            missionId = random(#Config.Missions)
+        end
+        
+        oldMissions[src] = missionId
         TriggerClientEvent('trase_food:client:beginMission', src, missionId)
     end, false)
 end
@@ -32,8 +38,16 @@ RegisterNetEvent('trase_food:server:food_delivered', function(missionId)
     if not Config.Missions[missionId] or not legit[src] then return end -- Modder
 
     local mission = Config.Missions[missionId]
-    local reward = random(mission.Reward.Amount[1], mission.Reward.Amount[2])
 
-    FRAMEWORK.addItem(src, mission.Reward.Item, reward)
-    TriggerClientEvent('trase_food:client:notify', src, { type = 'success', title = locale('reward_title'), description = locale('reward_desc'):gsub('{reward}', reward) })
+    if mission.Reward then
+        local reward = random(mission.Reward.Amount[1], mission.Reward.Amount[2])
+        FRAMEWORK.addItem(src, mission.Reward.Item, reward)
+        TriggerClientEvent('trase_food:client:notify', src, { type = 'success', title = locale('reward_title'), description = locale('reward_desc'):gsub('{reward}', reward) })
+    else
+        local reward = random(Config.Reward.Amount[1], Config.Reward.Amount[2])
+        FRAMEWORK.addItem(src, Config.Reward.Item, reward)
+        TriggerClientEvent('trase_food:client:notify', src, { type = 'success', title = locale('reward_title'), description = locale('reward_desc'):gsub('{reward}', reward) })
+    end
 end)
+
+print(#Config.Missions)

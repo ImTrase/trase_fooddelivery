@@ -3,6 +3,7 @@ local random <const> = math.random
 local cachedZone = nil
 local currentMission = nil
 local customer = nil
+local blip = nil
 
 lib.locale()
 
@@ -10,31 +11,30 @@ RegisterNetEvent('trase_food:client:notify', Config.Notify)
 
 
 lib.callback.register('trase_food:client:beginLooking', function()
-    -- if Config.Progress then
-    --     return lib.progressBar({
-    --         duration = random(Config.FindClientTimer[1], Config.FindClientTimer[2]) * 1000,
-    --         label = locale('looking_client_progressBar'),
-    --         useWhileDead = false,
-    --         canCancel = true,
-    --         disable = { car = true, move = true, combat = true },
-    --         anim = { scenario = 'WORLD_HUMAN_STAND_MOBILE' }
-    --     })
-    -- else
-    --     local ped = cache.ped
+    if Config.Progress then
+        return lib.progressBar({
+            duration = random(Config.FindClientTimer[1], Config.FindClientTimer[2]) * 1000,
+            label = locale('looking_client_progressBar'),
+            useWhileDead = false,
+            canCancel = true,
+            disable = { car = true, move = true, combat = true },
+            anim = { scenario = 'WORLD_HUMAN_STAND_MOBILE' }
+        })
+    else
+        local ped = cache.ped
 
-    --     -- Play the scenario
-    --     TaskStartScenarioInPlace(ped, 'WORLD_HUMAN_STAND_MOBILE', 0, true)
+        -- Play the scenario
+        TaskStartScenarioInPlace(ped, 'WORLD_HUMAN_STAND_MOBILE', 0, true)
 
-    --     -- Wait for the timer to finish
-    --     local waitTime = random(Config.FindClientTimer[1], Config.FindClientTimer[2]) * 1000
-    --     Wait(waitTime)
+        -- Wait for the timer to finish
+        local waitTime = random(Config.FindClientTimer[1], Config.FindClientTimer[2]) * 1000
+        Wait(waitTime)
 
-    --     -- Stop the scenario
-    --     ClearPedTasksImmediately(ped)
+        -- Stop the scenario
+        ClearPedTasksImmediately(ped)
 
-    --     return true
-    -- end
-    return true
+        return true
+    end
 end)
 
 RegisterNetEvent('trase_food:client:beginMission', function(missionId)
@@ -66,17 +66,43 @@ RegisterNetEvent('trase_food:client:beginMission', function(missionId)
             currentMission = missionId
         end
 
+        -- Create the blip
+        if Config.Blip.Enabled then
+            blip = AddBlipForCoord(mission.DropOff.x, mission.DropOff.y, mission.DropOff.z)
+            SetBlipSprite(blip, Config.Blip.Sprite)
+            SetBlipColour(blip, Config.Blip.Color)
+            SetBlipScale(blip, Config.Blip.Scale)
+            SetBlipAsShortRange(blip, true)
+            BeginTextCommandSetBlipName('STRING')
+            AddTextComponentString(locale('devliver_blip_name'))
+            EndTextCommandSetBlipName(blip)
+        end
+
         Config.Notify({ type = 'success', title = locale('dropoff_notify_title'), description = locale('dropoff_notify_desc') })
     elseif mission.MissionType == 'handoff' then
         currentMission = missionId
+
+        if Config.Blip.Enabled then
+            blip = AddBlipForCoord(mission.HandOff.x, mission.HandOff.y, mission.HandOff.z)
+            SetBlipSprite(blip, Config.Blip.Sprite)
+            SetBlipColour(blip, Config.Blip.Color)
+            SetBlipScale(blip, Config.Blip.Scale)
+            SetBlipAsShortRange(blip, true)
+            BeginTextCommandSetBlipName('STRING')
+            AddTextComponentString(locale('devliver_blip_name'))
+            EndTextCommandSetBlipName(blip)
+        end
+
         Config.Notify({ type = 'success', title = locale('dropoff_notify_title'), description = locale('dropoff_notify_desc') })
     end
 end)
 
 local createdObjects = {}
-local ANIM_INFO <const> = { dict = 'random@domestic', anim = 'pickup_low' }
+
 local FOOD_MODELS <const> = Config.FoodModels
+local CUSTOMER_MODELS <const> = Config.CustomerPedModels
 local HANDOFF_ANIM <const> = { dict = 'mp_common', anim = 'givetake1_a' }
+local ANIM_INFO <const> = { dict = 'random@domestic', anim = 'pickup_low' }
 
 AddEventHandler('trase_food:client:dropoff', function(data)
     local missionId = data.args
@@ -84,6 +110,7 @@ AddEventHandler('trase_food:client:dropoff', function(data)
     if not mission then return end
 
     currentMission = nil
+    RemoveBlip(blip)
 
     -- Delete the zone
     if cachedZone then
@@ -137,6 +164,7 @@ RegisterNetEvent('trase_food:client:handoff', function(data)
     if not mission then return end
 
     currentMission = nil
+    RemoveBlip(blip)
 
     -- Delete the zone
     if cachedZone then
@@ -220,20 +248,6 @@ AddEventHandler('onResourceStop', function(resource)
         end
     end
 end)
-
-local CUSTOMER_MODELS <const> = {
-    `a_f_m_bevhills_02`,
-    `a_f_m_bevhills_01`,
-    `a_f_m_bevhills_03`,
-    `a_m_m_bevhills_01`,
-    `a_m_m_bevhills_02`,
-    `a_f_y_bevhills_01`,
-    `a_f_y_bevhills_02`,
-    `a_f_y_bevhills_03`,
-    `a_f_y_bevhills_04`,
-    `a_m_y_bevhills_01`,
-    `a_m_y_bevhills_02`,
-}
 
 local function DisplayHelp(help, sound)
     AddTextEntry(GetCurrentResourceName(), help)
