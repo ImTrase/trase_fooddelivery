@@ -8,13 +8,22 @@
     "handoff_label": "Överlämna Mat",
 
     "dropoff_notify_title": "Mat Levererad",
-    "dropoff_notify_desc": "Du har fått en kund, gå och leverera deras mat!",
+    "dropoff_notify_desc": "Du har fått en kund, gå och leverera maten!",
 
     "reward_title": "Mat Levererad!",
-    "reward_desc": "Du har belönats med ${reward} för att ha levererat maten!",
+    "reward_desc": "Du har blivit belönad med ${reward} för att ha levererat maten!",
 
-    "handoff_help": "Tryck på ~INPUT_CONTEXT~ för att överlämna mat!",
-    "dropoff_help": "Tryck på ~INPUT_CONTEXT~ för att lämna mat!",
+    "handoff_help": "Tryck på ~INPUT_CONTEXT~ för att överlämna maten!",
+    "dropoff_help": "Tryck på ~INPUT_CONTEXT~ för att lämna maten!",
 
-    "devliver_blip_name": "Matleverans"
+    "devliver_blip_name": "Matleverans",
+
+    "active_mission_title": "Aktiv Leverans",
+    "active_mission_desc": "Du måste slutföra din aktuella leverans innan du kan starta en ny.",
+
+    "progress_bar_active_title": "Åtgärd pågår",
+    "progress_bar_active_desc": "Du måste vänta tills den nuvarande åtgärden är klar innan du startar en ny.",
+
+    "in_vehicle_title": "Inte i Fordon",
+    "in_vehicle_desc": "Du kan inte vara i ett fordon och göra detta."
 }

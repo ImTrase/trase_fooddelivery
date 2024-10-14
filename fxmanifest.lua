@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Trase'
 description 'A food devlivery script, similar to something like Doordash.'
-version '1.0.0'
+version '1.0.1'
 
 shared_scripts {
     '@ox_lib/init.lua',
@@ -16,6 +16,7 @@ client_scripts {
 }
 
 server_scripts {
+    'server/versions.lua',
     'server/server.lua'
 }
 

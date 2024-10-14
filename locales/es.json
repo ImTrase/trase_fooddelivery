@@ -1,5 +1,5 @@
 {
-    "no_job_title": "Trabajo inválido",
+    "no_job_title": "Trabajo no válido",
     "no_job_desc": "No tienes el trabajo requerido para hacer esto.",
 
     "looking_client_progressBar": "Buscando un cliente...",
@@ -16,5 +16,14 @@
     "handoff_help": "¡Presiona ~INPUT_CONTEXT~ para pasar la comida!",
     "dropoff_help": "¡Presiona ~INPUT_CONTEXT~ para entregar la comida!",
 
-    "devliver_blip_name": "Entrega de Comida"
+    "devliver_blip_name": "Entrega de Comida",
+
+    "active_mission_title": "Entrega Activa",
+    "active_mission_desc": "Debes completar tu entrega actual antes de iniciar una nueva.",
+
+    "progress_bar_active_title": "Acción en Progreso",
+    "progress_bar_active_desc": "Debes esperar a que la acción actual se complete antes de iniciar otra.",
+
+    "in_vehicle_title": "No Estás en un Vehículo",
+    "in_vehicle_desc": "No puedes estar en un vehículo y hacer esto."
 }

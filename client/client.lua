@@ -9,6 +9,9 @@ lib.locale()
 
 RegisterNetEvent('trase_food:client:notify', Config.Notify)
 
+lib.callback.register('trase_food:client:inVehicle', function()
+    return cache.vehicle
+end)
 
 lib.callback.register('trase_food:client:beginLooking', function()
     if Config.Progress then

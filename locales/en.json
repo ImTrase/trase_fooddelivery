@@ -16,5 +16,14 @@
     "handoff_help": "Press ~INPUT_CONTEXT~ to handoff food!",
     "dropoff_help": "Press ~INPUT_CONTEXT~ to dropoff food!",
 
-    "devliver_blip_name": "Food Delivery"
+    "devliver_blip_name": "Food Delivery",
+
+    "active_mission_title": "Active Delivery",
+    "active_mission_desc": "You must complete your current delivery before starting a new one.",
+
+    "progress_bar_active_title": "Action in Progress",
+    "progress_bar_active_desc": "You must wait until the current action is completed before starting a new one.",
+
+    "in_vehicle_title": "Not In Vehicle.",
+    "in_vehicle_desc": "You cannot be in a vehicle and do this."
 }

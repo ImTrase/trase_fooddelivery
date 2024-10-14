@@ -1,20 +1,29 @@
 {
     "no_job_title": "Emploi invalide",
-    "no_job_desc": "Vous n'avez pas l'emploi requis pour faire cela.",
+    "no_job_desc": "Vous n'avez pas le travail requis pour faire cela.",
 
     "looking_client_progressBar": "Recherche d'un client...",
 
-    "dropoff_label": "Livrer la Nourriture",
+    "dropoff_label": "Déposer la Nourriture",
     "handoff_label": "Remettre la Nourriture",
 
     "dropoff_notify_title": "Nourriture Livrée",
-    "dropoff_notify_desc": "Vous avez un client, allez livrer leur nourriture !",
+    "dropoff_notify_desc": "Vous avez un client, allez livrer sa nourriture !",
 
-    "reward_title": "Nourriture Livrée !",
-    "reward_desc": "Vous avez été récompensé de ${reward} pour la livraison de la nourriture !",
+    "reward_title": "Nourriture Livrée !",
+    "reward_desc": "Vous avez reçu ${reward} pour avoir livré la nourriture !",
 
-    "handoff_help": "Appuyez sur ~INPUT_CONTEXT~ pour remettre la nourriture !",
-    "dropoff_help": "Appuyez sur ~INPUT_CONTEXT~ pour livrer la nourriture !",
+    "handoff_help": "Appuyez sur ~INPUT_CONTEXT~ pour remettre la nourriture !",
+    "dropoff_help": "Appuyez sur ~INPUT_CONTEXT~ pour déposer la nourriture !",
 
-    "devliver_blip_name": "Livraison de Nourriture"
+    "devliver_blip_name": "Livraison de Nourriture",
+
+    "active_mission_title": "Livraison Active",
+    "active_mission_desc": "Vous devez terminer votre livraison actuelle avant d'en commencer une nouvelle.",
+
+    "progress_bar_active_title": "Action en Cours",
+    "progress_bar_active_desc": "Vous devez attendre que l'action actuelle soit terminée avant d'en commencer une nouvelle.",
+
+    "in_vehicle_title": "Pas dans un Véhicule",
+    "in_vehicle_desc": "Vous ne pouvez pas être dans un véhicule et faire cela."
 }

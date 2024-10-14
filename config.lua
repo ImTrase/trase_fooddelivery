@@ -6,6 +6,7 @@ Config.Progress = true -- Enable the progress bar from ox_lib?
 Config.FindClientTimer = {5, 7} -- How long it takes to find a client (in seconds) (min, max) e.g. 5-7 seconds
 Config.Target = true -- enable/disable. (requires: ox_target)
 Config.Wait = 60 -- Time in seconds to delete the object or ped once the mission is complete
+Config.AllowInVehicle = false -- If true, may experience bugs may occur.
 
 Config.Blip = {
     Enabled = true,
